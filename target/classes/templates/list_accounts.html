@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title th:text="${title}">Insert title here</title>
+</head>
+<body>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Account</th>
+				<th>Beneficiary</th>
+				<th>Time Stamp</th>
+				
+
+			</tr>
+
+		</thead>
+		<tbody>
+			<tr th:each="account: ${accounts}">
+				<td th:text="${account.id}"></td>
+				<td th:text="${account.account}"></td>
+				<td th:text="${account.beneficiary}"></td>
+				<td th:text="${account.createTimestamp}"></td>
+				<td><a th:href="@{/form/} + ${account.id}" th:text="Edit"></a></td>
+				<td><a th:href="@{/delete/} + ${account.id}" th:text="Delete"></a></td>
+
+			</tr>
+
+		</tbody>
+
+	</table>
+
+</body>
+</html>
