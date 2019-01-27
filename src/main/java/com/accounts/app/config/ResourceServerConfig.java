@@ -22,7 +22,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .disable()
                 .and()
                 .authorizeRequests()
-                .antMatchers( "/list","/login","/h2-console/**","/oauth/token**").permitAll()
+                .antMatchers( "/list","/form","/h2-console/**").permitAll()
                 .antMatchers(HttpMethod.PUT).authenticated()
                 .antMatchers(HttpMethod.POST).authenticated()
                 .antMatchers(HttpMethod.DELETE).authenticated();
