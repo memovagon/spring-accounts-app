@@ -54,7 +54,7 @@ public class AccountController {
 		Account account = null;
 
 		if (id > 0)
-			account = accountService.getById(id);
+			account = accountService.getById(id).get();
 		else
 			return "redirect:list";
 

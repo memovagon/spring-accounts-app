@@ -1,6 +1,7 @@
 package com.accounts.app.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,14 +23,14 @@ public class AccountRestController {
 	@Autowired
 	private IAccountService accountService;
 
-	@RequestMapping(value = "/accounts/", method = RequestMethod.GET)
+	@RequestMapping(value = "/accounts", method = RequestMethod.GET)
 	public List<Account> listAccounts() {
 		return accountService.findAll();
 
 	}
 
 	@RequestMapping(value = "/accounts/{id}", method = RequestMethod.GET)
-	public Account listAccount(@PathVariable(value = "id") Long id) {
+	public Optional<Account> listAccount(@PathVariable(value = "id") Long id) {
 		return accountService.getById(id);
 
 	}
@@ -47,10 +48,10 @@ public class AccountRestController {
 	@ResponseStatus(HttpStatus.CREATED)
 	public Account udpate(@RequestBody Account account, @PathVariable(value = "id") Long id ) {
 
-		 Account accountTemp = accountService.getById(id);
-		 accountTemp.setAccount(account.getAccount());
-		 accountTemp.setAccount(account.getBeneficiary());
-		 return accountService.save(accountTemp);
+		 Optional<Account> accountTemp = accountService.getById(id);
+		 accountTemp.get().setAccount(account.getAccount());
+		 accountTemp.get().setAccount(account.getBeneficiary());
+		 return accountService.save(accountTemp.get());
 
 	}
 	
