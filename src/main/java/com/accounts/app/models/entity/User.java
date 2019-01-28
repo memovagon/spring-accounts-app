@@ -5,7 +5,15 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ *  @Entity User Class
+ *  The User class links with Users Table 
+ *  This is used to application users for Spring security context
+ */
+
+
 @Entity
+@Table(name="users")
 public class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -16,8 +24,10 @@ public class User implements Serializable {
 
 	private String username;
 	private String password;
+	
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Role> roles;
+	
 	private boolean active;
 
 	public User() {

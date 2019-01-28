@@ -8,6 +8,10 @@ import org.springframework.stereotype.Service;
 import com.accounts.app.models.entity.User;
 import com.accounts.app.models.repositories.IUserRepository;
 
+/**
+ *  @Service AutorizationServerConfig class
+ *  AutorizationServerConfig class provide service layer implementation for User.  
+ */
 
 @Service
 public class UserService {

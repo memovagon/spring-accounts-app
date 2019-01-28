@@ -10,8 +10,13 @@ import org.springframework.transaction.annotation.Transactional;
 import com.accounts.app.models.entity.Account;
 import com.accounts.app.models.repositories.IAccountRepository;
 
+/**
+ *  @Service AccountService class
+ *  The AccountService class provide service layer implementation for Accounts.
+ */
+
 @Service
-public class AccountServiceImplements implements IAccountService {
+public class AccountService implements IAccountService {
 
 	@Autowired
 	private IAccountRepository accountDao;

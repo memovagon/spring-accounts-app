@@ -12,8 +12,9 @@
 				<th>Id</th>
 				<th>Account</th>
 				<th>Beneficiary</th>
-				<th>Time Stamp</th>
-				
+				<th>Created</th>
+				<th>Last updated</th>
+
 
 			</tr>
 
@@ -23,7 +24,8 @@
 				<td th:text="${account.id}"></td>
 				<td th:text="${account.account}"></td>
 				<td th:text="${account.beneficiary}"></td>
-				<td th:text="${account.createTimestamp}"></td>
+				<td th:text="${account.createdTimestamp}"></td>
+				<td th:text="${account.updatedTimestamp}"></td>
 				<td><a th:href="@{/form/} + ${account.id}" th:text="Edit"></a></td>
 				<td><a th:href="@{/delete/} + ${account.id}" th:text="Delete"></a></td>
 
@@ -33,5 +35,7 @@
 
 	</table>
 
+	<p><a th:href="@{/form}">Create a new User</a></p>
+	
 </body>
 </html>

@@ -6,9 +6,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+/**
+ *  @Entity Role Class
+ *  The Role class links with Roles Table
+ *  This is used to user's roles for Spring security context 
+ */
 
 @Entity
+@Table(name="roles")
 public class Role implements Serializable {
 
 	private static final long serialVersionUID = 1L;

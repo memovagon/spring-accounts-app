@@ -7,16 +7,24 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 
 /**
- *The @EnableResourceServer annotation adds a filter of type OAuth2AuthenticationProcessingFilter automatically
- *to the Spring Security filter chain.
+ *  @Configuration ResourceServerConfig class
+ *  The ResourceServerConfig is an implementation for OAUTH2 Resource Server. 
+ *  This allow server to resolve access tokens provided. 
+ *  Refer to https://docs.spring.io/spring-security-oauth2-boot/docs/current/reference/html/index.html.
  */
+
+
 @Configuration
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http
+        
+    	//Allow GET REST API Services and GUI available for unauthenticated Users
+    	// PUT, POST, DETETE REST API Services require authentication
+    	
+    	http
             .headers()
                 .frameOptions()
                 .disable()

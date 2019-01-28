@@ -10,10 +10,6 @@ import org.springframework.stereotype.Service;
 
 import com.accounts.app.models.repositories.IUserRepository;
 
-/**
- *
- * @author developer
- */
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 

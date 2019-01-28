@@ -1,0 +1,7 @@
+com.accounts.app
+com.accounts.app.config
+com.accounts.app.controllers
+com.accounts.app.models.entity
+com.accounts.app.models.repositories
+com.accounts.app.models.service
+com.example.demo.app
