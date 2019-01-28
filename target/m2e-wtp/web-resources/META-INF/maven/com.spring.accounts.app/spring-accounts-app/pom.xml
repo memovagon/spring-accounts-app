@@ -14,7 +14,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>spring-accounts-app</name>
-	<description>Acconts implementation on Java Spring for</description>
+	<description>Accounts implementation on Java Spring</description>
 
 	<properties>
 		<java.version>1.8</java.version>
